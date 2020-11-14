@@ -31,11 +31,11 @@ def encrypt(message):
     pub_key, pri_key = generate_keys(p,q)
     e,n = pub_key
     d,n = pri_key
-    return (message ** e)%n
+    return pow(message,e,n)
 
 # Decrypt function
 def decrypt(code, d, n):
-    return (code**d)%n
+    return pow(code,d,n)
 
 # Main function
 if __name__ == '__main__':
