@@ -1,10 +1,10 @@
 # Greatest Common Divisor function
-def gcd(a, b):
+def gcd(a: int, b: int) -> int:
     return b if a == 0 else gcd(b % a, a)
 
 
 # Check prime number function
-def isPrime(n):
+def isPrime(n: int) -> bool:
     if n < 2:
         return False
     elif n == 2:
@@ -14,7 +14,7 @@ def isPrime(n):
 
 
 # generate keys for RSA
-def generate_keys(p, q):
+def generate_keys(p: int, q: int):
     n = p * q  # Common key
     m = (p - 1) * (q - 1)  # Totient function
     e, d = 2, 1  # initial values of encrypt and decrypt keys
@@ -32,7 +32,7 @@ def generate_keys(p, q):
 
 
 # Encrypt function
-def encrypt(message):
+def encrypt(message: int) -> int:
     pub_key, pri_key = generate_keys(p, q)
     e, n = pub_key
     d, n = pri_key
@@ -40,7 +40,7 @@ def encrypt(message):
 
 
 # Decrypt function
-def decrypt(code, d, n):
+def decrypt(code: int, d: int, n: int) -> int:
     return pow(code, d, n)
 
 
